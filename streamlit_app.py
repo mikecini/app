@@ -8,4 +8,4 @@ st.header('This is O14s app')
 qs.extend_pandas()
 stock = qs.utils.download_returns('0P000073QD.TO')
 
-st.line_chart(stock)
+st.plotly_chart(stock)
