@@ -5,7 +5,7 @@ import ffn
 st.title('Global Equity Performance Tool')
 st.header('This is O14s app')
 
-st.selectbox ('Select 2 Funds',[AGF Global Select, Fidelity Global Innovators,Dynamic Power Global Growth])
+st.selectbox ('Select 2 Funds',[1,2,3])
 
 
 prices = ffn.get('0P000073QD.TO,0P0000737Y.TO', start='2008-01-01')
