@@ -1,13 +1,10 @@
-import quantstats as qs
-import streamlit as st
-import pandas as pd
-import numpy as np
-import scipy
-import matplotlib.pyplot as plt
+import ffn
+#%pylab inline
 
 st.title('Global Equity Performance Tool')
 st.header('This is O14s app')
 
-qs.extend_pandas()
-stock = qs.utils.download_returns('0P000073QD.TO')
+prices = ffn.get('aapl,msft', start='2010-01-01')
+ax = prices.rebase()
 
+st.line_chart(ax)
