@@ -10,4 +10,4 @@ st.header('This is O14s app')
 qs.extend_pandas()
 stock = qs.utils.download_returns('0P000073QD.TO')
 
-qs.plot_snapshot(stock)
+st.line(stock)
