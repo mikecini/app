@@ -1,1 +1,5 @@
 quantstats
+pandas
+numpy
+scipy
+matplotlib.pyplot
