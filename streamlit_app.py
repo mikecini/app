@@ -1,4 +1,4 @@
-import streamlite as st
+import streamlit as st
 import ffn
 #%pylab inline
 
