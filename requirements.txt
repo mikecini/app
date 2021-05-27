@@ -1,1 +1,1 @@
-quantstats
+py -m pip install quantstats
