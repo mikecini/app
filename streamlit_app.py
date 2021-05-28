@@ -11,4 +11,4 @@ checked_stocks = [stock for stock, checked in zip(stocks, check_boxes) if checke
 for stock in checked_stocks:
   returns = ffn.get(stock, start='2008-01-01').dropna()
         
-st.graphviz_chart(returns)
+st.line_graph(returns)
