@@ -12,5 +12,5 @@ for stock in checked_stocks:
 
 lookback = ffn.core.calc_perf_stats(prices)
   
-st.table(lookback)  
+st.table(lookback.iloc[0:3)  
   
