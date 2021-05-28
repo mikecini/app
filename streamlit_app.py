@@ -12,3 +12,4 @@ if st.button("Download data"):
     for stock in checked_stocks:
         returns = ffn.get(stock, start='2008-01-01').dropna()
         
+st.graphviz_chart(returns)
