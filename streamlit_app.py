@@ -10,5 +10,7 @@ checked_stocks = [stock for stock, checked in zip(stocks, check_boxes) if checke
 for stock in checked_stocks:
   returns = ffn.get(stock, start='2008-01-01').dropna()
   df = ffn.core.PerformanceStats(returns, rf=0.0)
-  st.table(df)  
+
+  
+st.table(df)  
   
