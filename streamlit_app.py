@@ -9,8 +9,8 @@ st.checkbox ('AGF Global Select')
 st.checkbox ('FIDO Gloabl Innovators')
 st.checkbox ('Dynamic Power Global Growth')
 st.checkbox ('Edgepoint Global Portfolio')
-st.checkbox ('AGF Global Select')
-st.checkbox ('AGF Global Select')
+st.checkbox ('Mawer Global Equity')
+st.checkbox ('Capital Group Global Equity Canada')
 
 
 prices = ffn.get('0P000073QD.TO,0P0000737Y.TO', start='2008-01-01')
