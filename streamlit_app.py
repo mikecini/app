@@ -10,4 +10,4 @@ checked_stocks = [stock for stock, checked in zip(stocks, check_boxes) if checke
 
 if st.button("Download data"):
     for stock in checked_stocks:
-        download_data(stock)
+        returns = ffn.get(stock, start='2008-01-01').to_returns().dropna()
