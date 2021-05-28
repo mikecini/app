@@ -8,9 +8,9 @@ check_boxes = [st.sidebar.checkbox(stock, key=stock) for stock in stocks]
 checked_stocks = [stock for stock, checked in zip(stocks, check_boxes) if checked]
 
 for stock in checked_stocks:
-  returns = ffn.get(stock, start='2008-01-01').dropna()
-  df = ffn.core.PerformanceStats(returns, rf=0.0)
+  prices = ffn.get(stock, start='2008-01-01').dropna()
 
+lookback = ffn.core.calc_perf_stats(prices)
   
-st.table(df)  
+st.table(lookback)  
   
