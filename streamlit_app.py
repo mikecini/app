@@ -1,6 +1,6 @@
 import streamlit as st
 import ffn
-#%pylab inline
+import pylab
 
 stocks = ["0P000073QD.TO", "0P0000737Y.TO", "0P0001C8AE.TO", "0P0000IUYO.TO"]
 
