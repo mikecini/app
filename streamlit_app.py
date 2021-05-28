@@ -6,8 +6,6 @@ stocks = ["AGF Global Select", "Dynamic Power Global Growth", "Fidelity Global I
 
 check_boxes = [st.sidebar.checkbox(stock, key=stock) for stock in stocks]
 
-st.write([stock for stock, checked in zip(stocks, check_boxes) if checked])
-
 checked_stocks = [stock for stock, checked in zip(stocks, check_boxes) if checked]
 
 if st.button("Download data"):
