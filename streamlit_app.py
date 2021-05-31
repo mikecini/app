@@ -28,28 +28,28 @@ if GS and EDG is True:
   sharpe_ratio = np.zeros((num_port))
   
   for i in range(num_port):
-  wts = np.random.uniform(size = len(price_data.columns))
-  wts = wts/np.sum(wts)
+    wts = np.random.uniform(size = len(price_data.columns))
+     wts = wts/np.sum(wts)
   
   # saving weights in the array
   
-  all_wts[i,:] = wts
+      all_wts[i,:] = wts
   
   # Portfolio Returns
   
-  port_ret = np.sum(log_ret.mean() * wts)
-  port_ret = (port_ret + 1) ** 252 - 1
+      port_ret = np.sum(log_ret.mean() * wts)
+      port_ret = (port_ret + 1) ** 252 - 1
   
   # Saving Portfolio returns
   
-  port_returns[i] = port_ret
+      port_returns[i] = port_ret
   
   
   # Portfolio Risk
   
-  port_sd = np.sqrt(np.dot(wts.T, np.dot(cov_mat, wts)))
+      port_sd = np.sqrt(np.dot(wts.T, np.dot(cov_mat, wts)))
   
-  port_risk[i] = port_sd
+      port_risk[i] = port_sd
   
   # Portfolio Sharpe Ratio
   # Assuming 0% Risk Free Rate
