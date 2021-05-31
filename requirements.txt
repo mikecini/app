@@ -2,4 +2,4 @@ quantstats
 ffn
 pandas
 numpy
-pyfolio
+PyPortfolioOpt
