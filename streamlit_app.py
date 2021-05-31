@@ -14,7 +14,6 @@ max_weight = st.number_input('Maximum Weight')
 
 if GS and EDG is True:
   price_data = ffn.get('0P000073QD.TO,0P0000IUYO.TO')
-  price_data.rename.columns = ['AGF Global Select','Edgepoint Global Portfolio']
   log_ret = np.log(price_data/price_data.shift(1))
   cov_mat = log_ret.cov() * 252
   num_port = 5000
