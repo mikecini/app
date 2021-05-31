@@ -27,6 +27,38 @@ if GS and EDG is True:
   # Creating an empty array to store portfolio sharpe ratio
   sharpe_ratio = np.zeros((num_port))
   
+  for i in range(num_port):
+  wts = np.random.uniform(size = len(price_data.columns))
+  wts = wts/np.sum(wts)
+  
+  # saving weights in the array
+  
+  all_wts[i,:] = wts
+  
+  # Portfolio Returns
+  
+  port_ret = np.sum(log_ret.mean() * wts)
+  port_ret = (port_ret + 1) ** 252 - 1
+  
+  # Saving Portfolio returns
+  
+  port_returns[i] = port_ret
+  
+  
+  # Portfolio Risk
+  
+  port_sd = np.sqrt(np.dot(wts.T, np.dot(cov_mat, wts)))
+  
+  port_risk[i] = port_sd
+  
+  # Portfolio Sharpe Ratio
+  # Assuming 0% Risk Free Rate
+  
+  sr = port_ret / port_sd
+  sharpe_ratio[i] = sr
+  min_var = all_wts[port_risk.argmin()]
+  st.table(min_var)
+  
 if GS and DYN is True: 
   GS_DYN = ffn.get('0P000073QD.TO,0P0000737Y.TO').to_returns().dropna()
   GS_DYN.columns=['AGF Global Select','Dynamic Power Global Growth']
