@@ -13,7 +13,7 @@ MAW = st.checkbox('Mawer Global Equity')
 from_date = st.date_input('From Date')
 
 if GS and EDG is True:
-  price_data = ffn.get('0P000073QD.TO,0P0000IUYO.TO', from = from_date)
+  price_data = ffn.get('0P000073QD.TO,0P0000IUYO.TO', start = from_date)
   price_data.columns = ['AGF Global Select','Edgepoint Global Portfolio']
   log_ret = np.log(price_data/price_data.shift(1))
   cov_mat = log_ret.cov() * 252
