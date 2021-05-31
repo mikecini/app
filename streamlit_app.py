@@ -159,7 +159,7 @@ if GS and CAP is True:
   
 if GS and MAW is True:
   price_data = ffn.get('0P000073QD.TO,0P0000MOFR.TO')
-  price_data.columns = ['AGF Global Select','Edgepoint Global Portfolio']
+  price_data.columns = ['AGF Global Select','Mawer Global Equity']
   log_ret = np.log(price_data/price_data.shift(1))
   cov_mat = log_ret.cov() * 252
   num_port = 5000
