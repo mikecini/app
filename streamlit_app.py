@@ -8,6 +8,6 @@ FID = st.checkbox('Fidelity Global Innovators')
 
 if GS is True:
   GS_Returns = ffn.get('0P000073QD.TO')
-  
+  GS_PS = ffn.core.PerformanceStats(GS_Returns, rf = 0)
 
-st.dataframe(GS_Returns)
+st.dataframe(GS_PS)
