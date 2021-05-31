@@ -119,7 +119,7 @@ if GS and FID is True:
   st.table(max_sr)
 
   
- if GS and CAP is True:
+if GS and CAP is True:
   price_data = ffn.get('0P000073QD.TO,0P000071YR.TO')
   price_data.columns = ['AGF Global Select','Captial Group Global Equity Canada']
   log_ret = np.log(price_data/price_data.shift(1))
