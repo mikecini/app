@@ -3,12 +3,6 @@ import ffn
 import pandas as pd
 import numpy as np
 
-import pandas as pd
-from pypfopt.efficient_frontier import EfficientFrontier
-from pypfopt import risk_models
-from pypfopt import expected_returns
-
-
 GS = st.checkbox('AGF Global Select')
 EDG = st.checkbox('Edgepoint Global Portfolio')
 DYN = st.checkbox('Dynamic Power Global Growth Portfolio')
