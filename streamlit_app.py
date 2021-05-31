@@ -8,7 +8,7 @@ FID = st.checkbox('Fidelity Global Innovators')
 
 if GS is True:
   GS_Prices = ffn.get('0P000073QD.TO')
-  display_lookback_returns(GS_Prices)
+  
   
 
 
