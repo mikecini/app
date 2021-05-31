@@ -39,7 +39,7 @@ if GS and EDG is True:
     min_var = pd.Series(min_var, index=names)
     max_sr = pd.Series(max_sr, index=names)
   
-  rebase = ffn.core.rebase(price_data, value=100)
+  rebase = ffn.core.rebase(price_data, value=0)
   st.title('Performance')
   st.line_chart(rebase)
   
@@ -79,7 +79,7 @@ if GS and DYN is True:
     min_var = pd.Series(min_var, index=names)
     max_sr = pd.Series(max_sr, index=names)
   
-  rebase = ffn.core.rebase(price_data, value=100)
+  rebase = ffn.core.rebase(price_data, value= 0)
   st.title('Performance')
   st.line_chart(rebase)
   
@@ -119,7 +119,7 @@ if GS and FID is True:
     min_var = pd.Series(min_var, index=names)
     max_sr = pd.Series(max_sr, index=names)
   
-  rebase = ffn.core.rebase(price_data, value=100)
+  rebase = ffn.core.rebase(price_data, value= 0)
   st.title('Performance')
   st.line_chart(rebase)
   
@@ -161,7 +161,7 @@ if GS and CAP is True:
     min_var = pd.Series(min_var, index=names)
     max_sr = pd.Series(max_sr, index=names)
   
-  rebase = ffn.core.rebase(price_data, value=100)
+  rebase = ffn.core.rebase(price_data, value= 0)
   st.title('Performance')
   st.line_chart(rebase)
   
@@ -202,7 +202,7 @@ if GS and MAW is True:
     min_var = pd.Series(min_var, index=names)
     max_sr = pd.Series(max_sr, index=names)
   
-  rebase = ffn.core.rebase(price_data, value=100)
+  rebase = ffn.core.rebase(price_data, value= 0)
   st.title('Performance')
   st.line_chart(rebase)  
   
