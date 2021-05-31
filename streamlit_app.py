@@ -16,15 +16,10 @@ if GS and EDG is True:
   price_data = ffn.get('0P000073QD.TO,0P0000IUYO.TO')
   log_ret = np.log(price_data/price_data.shift(1))
   cov_mat = log_ret.cov() * 252
-  # Simulating 5000 portfolios
   num_port = 5000
-  # Creating an empty array to store portfolio weights
   all_wts = np.zeros((num_port, len(price_data.columns)))
-  # Creating an empty array to store portfolio returns
   port_returns = np.zeros((num_port))
-  # Creating an empty array to store portfolio risks
   port_risk = np.zeros((num_port))
-  # Creating an empty array to store portfolio sharpe ratio
   sharpe_ratio = np.zeros((num_port))
   
   for i in range(num_port):
@@ -38,7 +33,6 @@ if GS and EDG is True:
     port_risk[i] = port_sd
     sr = port_ret / port_sd
     sharpe_ratio[i] = sr
-    names.columns = ['AGF Global Select','Edgepoint Global Portfolio']
     min_var = all_wts[port_risk.argmin()]
 
 st.table(min_var)
