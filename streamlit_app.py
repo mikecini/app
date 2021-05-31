@@ -38,7 +38,11 @@ if GS and EDG is True:
     max_sr = all_wts[sharpe_ratio.argmax()]
     min_var = pd.Series(min_var, index=names)
     max_sr = pd.Series(max_sr, index=names)
-    
+  
+  rebase = ffn.core.rebase(price_data, value=100)
+  
+  st.line_chart(rebase)
+  
   st.title('Minimum Variance Portfolio')
   st.bar_chart(min_var)
   st.table(min_var)
