@@ -17,10 +17,12 @@ if GS and EDG is True:
   
 if GS and DYN is True: 
   GS_DYN = ffn.get('0P000073QD.TO,0P0000737Y.TO').to_returns().dropna()
+  GS_DYN.columns=['AGF Global Select','Dynamic Power Global Growth']
   weights = ffn.core.calc_mean_var_weights(GS_DYN, weight_bounds=(min_weight, max_weight), rf=0.0)
   st.table (weights)
   
 if GS and FID is True:
   GS_FID = ffn.get('0P000073QD.TO,0P0001C8AE.TO').to_returns().dropna()
+  GS_FID.columns=['AGF Global Select','Fidelity Global Innovators']
   weights = ffn.core.calc_mean_var_weights(GS_FID, weight_bounds=(min_weight, max_weight), rf=0.0)
   st.table (weights)
