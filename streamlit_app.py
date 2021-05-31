@@ -10,4 +10,4 @@ if GS is True:
   GS_Returns = ffn.get('0P000073QD.TO')
   GS_Stats = ffn.core.GroupStats('GS_Returns')
 
-st.write(GS_Stats)
+st.dataframe(GS_Stats)
