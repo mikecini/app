@@ -53,7 +53,7 @@ if GS and EDG is True:
   st.table(max_sr)
   
 if GS and DYN is True:
-  price_data = ffn.get('0P000073QD.TO,0P0000737Y.TO')
+  price_data = ffn.get('0P000073QD.TO,0P0000737Y.TO',start = from_date)
   price_data.columns = ['AGF Global Select','Dynamic Power Global Growth']
   log_ret = np.log(price_data/price_data.shift(1))
   cov_mat = log_ret.cov() * 252
@@ -93,7 +93,7 @@ if GS and DYN is True:
   st.table(max_sr)
   
 if GS and FID is True:
-  price_data = ffn.get('0P000073QD.TO,0P0001C8AE.TO')
+  price_data = ffn.get('0P000073QD.TO,0P0001C8AE.TO',start = from_date)
   price_data.columns = ['AGF Global Select','Fidelity Global Innovators']
   log_ret = np.log(price_data/price_data.shift(1))
   cov_mat = log_ret.cov() * 252
@@ -134,7 +134,7 @@ if GS and FID is True:
 
   
 if GS and CAP is True:
-  price_data = ffn.get('0P000073QD.TO,0P000071YR.TO')
+  price_data = ffn.get('0P000073QD.TO,0P000071YR.TO',start = from_date)
   price_data.columns = ['AGF Global Select','Captial Group Global Equity Canada']
   log_ret = np.log(price_data/price_data.shift(1))
   cov_mat = log_ret.cov() * 252
@@ -174,7 +174,7 @@ if GS and CAP is True:
 
   
 if GS and MAW is True:
-  price_data = ffn.get('0P000073QD.TO,0P0000MOFR.TO')
+  price_data = ffn.get('0P000073QD.TO,0P0000MOFR.TO',start = from_date)
   price_data.columns = ['AGF Global Select','Mawer Global Equity']
   log_ret = np.log(price_data/price_data.shift(1))
   cov_mat = log_ret.cov() * 252
