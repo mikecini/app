@@ -7,8 +7,14 @@ DYN = st.checkbox('Dynamic Power Global Growth Portfolio')
 FID = st.checkbox('Fidelity Global Innovators')
 
 if GS is True:
-  GS_Prices = ffn.get('0P000073QD.TO')
+  GS_Prices = ffn.get('0P000073QD.TO').to_returns()
   
+if EDG is True:
+  EDG_Prices = ffn.get('0P0000IUYO.TO')
   
+if DYN is True: 
+  DYN_Prices = ffn.get('0P0000737Y.TO')
 
+if FID is True:
+  FID_Prices = ffn.get('0P0001C8AE.TO')
 
