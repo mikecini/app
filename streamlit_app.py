@@ -36,7 +36,7 @@ if GS and EDG is True:
     sharpe_ratio[i] = sr
     names = price_data.columns
     min_var = all_wts[port_risk.argmin()]
-
+    min_var.columns = ['AGF Global Select','Edgepoint Global Portfolio']
 st.table(min_var)
   
 if GS and DYN is True: 
