@@ -34,7 +34,8 @@ if GS and EDG is True:
     min_var = all_wts[port_risk.argmin()]
     max_sr = all_wts[sharpe_ratio.argmax()]
     min_var = pd.Series(min_var, index=names)
-
+    max_sr = pd.Series(max_sr, index=names)
+    
   st.title('Minimum Variance Portfolio')
   st.bar_chart(min_var)
   st.table(min_var)
