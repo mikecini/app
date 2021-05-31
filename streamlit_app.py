@@ -13,10 +13,19 @@ max_weight = st.number_input('Maximum Weight')
 
 
 if GS and EDG is True:
-  GS_EDG = ffn.get('0P000073QD.TO,0P0000IUYO.TO').to_returns().dropna()
-  GS_EDG.columns=['AGF Global Select','Edgepoint Global Portfolio']
-  weights = ffn.core.calc_mean_var_weights(GS_EDG, weight_bounds=(min_weight, max_weight), rf=0.0)
-  st.table (weights)
+  price_data = ffn.get('0P000073QD.TO,0P0000IUYO.TO')
+  log_ret = np.log(price_data/price_data.shift(1))
+  cov_mat = log_ret.cov() * 252
+  # Simulating 5000 portfolios
+  num_port = 5000
+  # Creating an empty array to store portfolio weights
+  all_wts = np.zeros((num_port, len(price_data.columns)))
+  # Creating an empty array to store portfolio returns
+  port_returns = np.zeros((num_port))
+  # Creating an empty array to store portfolio risks
+  port_risk = np.zeros((num_port))
+  # Creating an empty array to store portfolio sharpe ratio
+  sharpe_ratio = np.zeros((num_port))
   
 if GS and DYN is True: 
   GS_DYN = ffn.get('0P000073QD.TO,0P0000737Y.TO').to_returns().dropna()
