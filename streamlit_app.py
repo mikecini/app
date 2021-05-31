@@ -1,5 +1,9 @@
 import streamlit as st
 import ffn
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas_datareader as web
 
 GS = st.checkbox('AGF Global Select')
 EDG = st.checkbox('Edgepoint Global Portfolio')
