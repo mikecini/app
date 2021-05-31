@@ -12,7 +12,7 @@ max_weight = st.number_input('Maximum Weight')
 if GS and EDG is True:
   GS_EDG = ffn.get('0P000073QD.TO,0P0000IUYO.TO').to_returns().dropna()
   weights = ffn.core.calc_mean_var_weights(GS_EDG, weight_bounds=(min_weight, max_weight), rf=0.0)
-  weights.columns['AGF Global Select','Edgepoint Global Portfolio']
+  weights.columns=['AGF Global Select','Edgepoint Global Portfolio']
   st.table (weights)
   
 if GS and DYN is True: 
