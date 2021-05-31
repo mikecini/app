@@ -39,6 +39,7 @@ if GS and EDG is True:
     min_var = pd.Series(min_var, index=names)
 
 st.bar_chart(min_var)
+st.table(min_var)
   
 if GS and DYN is True: 
   GS_DYN = ffn.get('0P000073QD.TO,0P0000737Y.TO').to_returns().dropna()
