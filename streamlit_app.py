@@ -35,7 +35,17 @@ if GS and EDG is True:
     sharpe_ratio[i] = sr
     names = price_data.columns
     min_var = all_wts[port_risk.argmin()]
-st.table(min_var)
+    max_sr = all_wts[sharpe_ratio.argmax()]
+    min_var = pd.Series(min_var, index=names)
+
+min_var = min_var.sort_values()
+fig = plt.figure()
+ax1 = fig.add_axes([0.1,0.1,0.8,0.8])
+ax1.set_xlabel('Asset')
+ax1.set_ylabel("Weights")
+ax1.set_title("Minimum Variance Portfolio weights")
+min_var.plot(kind = 'bar')
+plt.show();
   
 if GS and DYN is True: 
   GS_DYN = ffn.get('0P000073QD.TO,0P0000737Y.TO').to_returns().dropna()
