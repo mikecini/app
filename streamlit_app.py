@@ -40,7 +40,7 @@ if GS and EDG is True:
     max_sr = pd.Series(max_sr, index=names)
   
   rebase = ffn.core.rebase(price_data, value=100)
-  
+  st.title('Performance')
   st.line_chart(rebase)
   
   st.title('Minimum Variance Portfolio')
@@ -80,7 +80,7 @@ if GS and DYN is True:
     max_sr = pd.Series(max_sr, index=names)
   
   rebase = ffn.core.rebase(price_data, value=100)
-  
+  st.title('Performance')
   st.line_chart(rebase)
   
   st.title('Minimum Variance Portfolio')
@@ -120,6 +120,7 @@ if GS and FID is True:
     max_sr = pd.Series(max_sr, index=names)
   
   rebase = ffn.core.rebase(price_data, value=100)
+  st.title('Performance')
   st.line_chart(rebase)
   
   
@@ -161,6 +162,7 @@ if GS and CAP is True:
     max_sr = pd.Series(max_sr, index=names)
   
   rebase = ffn.core.rebase(price_data, value=100)
+  st.title('Performance')
   st.line_chart(rebase)
   
   st.title('Minimum Variance Portfolio')
@@ -201,6 +203,7 @@ if GS and MAW is True:
     max_sr = pd.Series(max_sr, index=names)
   
   rebase = ffn.core.rebase(price_data, value=100)
+  st.title('Performance')
   st.line_chart(rebase)  
   
   st.title('Minimum Variance Portfolio')
