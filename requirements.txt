@@ -2,7 +2,4 @@ quantstats
 ffn
 pandas
 numpy
-zipline 
-json 
-empyrical
 pyfolio
