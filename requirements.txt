@@ -1,2 +1,6 @@
 quantstats
 ffn
+pandas
+numpy
+matplotlib.pyplot
+pandas_datareader
