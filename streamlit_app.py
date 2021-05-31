@@ -6,15 +6,17 @@ EDG = st.checkbox('Edgepoint Global Portfolio')
 DYN = st.checkbox('Dynamic Power Global Growth Portfolio')
 FID = st.checkbox('Fidelity Global Innovators')
 
-if GS is True:
-  GS_Prices = ffn.get('0P000073QD.TO').to_returns().dropna()
+if GS and EDG is True:
+  GS_EDG = ffn.get('0P000073QD.TO,0P0000IUYO.TO').to_returns().dropna()
+  weights = ffn.core.calc_mean_var_weights(GS_EDG, weight_bounds=(0.0, 1.0), rf=0.0, covar_method='ledoit-wolf')
+  st.table (weights)
   
-if EDG is True:
-  EDG_Prices = ffn.get('0P0000IUYO.TO').to_returns().dropna()
+if GS and DYN is True: 
+  GS_DYN = ffn.get('0P000073QD.TO,0P0000737Y.TO').to_returns().dropna()
+  weights = ffn.core.calc_mean_var_weights(GS_DYN, weight_bounds=(0.0, 1.0), rf=0.0, covar_method='ledoit-wolf')
+  st.table (weights)
   
-if DYN is True: 
-  DYN_Prices = ffn.get('0P0000737Y.TO').to_returns().dropna()
-
-if FID is True:
-  FID_Prices = ffn.get('0P0001C8AE.TO').to_returns().dropna()
-
+if GS and FID is True:
+  GS_FID = ffn.get('0P000073QD.TO,0P0001C8AE.TO').to_returns().dropna()
+  weights = ffn.core.calc_mean_var_weights(GS_FID, weight_bounds=(0.0, 1.0), rf=0.0, covar_method='ledoit-wolf')
+  st.table (weights)
