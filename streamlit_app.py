@@ -46,6 +46,7 @@ if GS and EDG is True:
   
 if GS and DYN is True:
   price_data = ffn.get('0P000073QD.TO,0P0000737Y.TO')
+  price_data.columns = ['AGF Global Select','Dynamic Power Global Growth']
   log_ret = np.log(price_data/price_data.shift(1))
   cov_mat = log_ret.cov() * 252
   num_port = 5000
