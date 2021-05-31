@@ -8,9 +8,6 @@ GS = st.checkbox('AGF Global Select')
 EDG = st.checkbox('Edgepoint Global Portfolio')
 DYN = st.checkbox('Dynamic Power Global Growth Portfolio')
 FID = st.checkbox('Fidelity Global Innovators')
-min_weight = st.number_input('Minimum Weight')
-max_weight = st.number_input('Maximum Weight')
-
 
 if GS and EDG is True:
   price_data = ffn.get('0P000073QD.TO,0P0000IUYO.TO')
@@ -41,6 +38,10 @@ if GS and EDG is True:
   st.title('Minimum Variance Portfolio')
   st.bar_chart(min_var)
   st.table(min_var)
+  
+  st.title('Maximum Sharpe Portfolio')
+  st.bar_chart(max_sr)
+  st.table(max_sr)
   
 if GS and DYN is True: 
   GS_DYN = ffn.get('0P000073QD.TO,0P0000737Y.TO').to_returns().dropna()
