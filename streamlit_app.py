@@ -19,9 +19,8 @@ if GS and EDG is True:
   # Optimize for maximal Sharpe ratio
   ef = EfficientFrontier(mu, S)
   weights = ef.max_sharpe()
-  performance = ef.portfolio_performance(verbose=True)
-  
-  st.line_chart(performance)
+    
+  st.bar_chart(weights)
     
 if GS and DYN is True:
   price_data = ffn.get('0P000073QD.TO,0P0000737Y.TO',start = from_date)
