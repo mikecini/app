@@ -38,7 +38,7 @@ if GS and EDG is True:
     port_risk[i] = port_sd
     sr = port_ret / port_sd
     sharpe_ratio[i] = sr
-    names = ['AGF Global Select','Edgepoint Global Portfolio']
+    names.columns = ['AGF Global Select','Edgepoint Global Portfolio']
     min_var = all_wts[port_risk.argmin()]
 
 st.table(min_var)
