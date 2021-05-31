@@ -7,7 +7,8 @@ DYN = st.checkbox('Dynamic Power Global Growth Portfolio')
 FID = st.checkbox('Fidelity Global Innovators')
 
 if GS is True:
-  GS_Returns = ffn.get('0P000073QD.TO')
-  ffn.core.PerformanceStats(GS_Returns, rf = 0)
+  GS_Prices = ffn.get('0P000073QD.TO')
+  GS_LBR = display_lookback_returns(GS_Prices)
+  
 
 
