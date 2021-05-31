@@ -6,6 +6,6 @@ EDG = st.checkbox('Edgepoint Global Portfolio')
 DYN = st.checkbox('Dynamic Power Global Growth Portfolio')
 FID = st.checkbox('Fidelity Global Innovators')
 
-if GS is True:
-  GS_Returns = ffn.get('0P000073QD.TO')
+if GS and EDG is True:
+  GS_Returns = ffn.get('0P000073QD.TO,0P0000IUYO.TO')
   st.line_chart(GS_Returns)
