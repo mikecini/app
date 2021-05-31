@@ -27,18 +27,19 @@ if GS and EDG is True:
   # Creating an empty array to store portfolio sharpe ratio
   sharpe_ratio = np.zeros((num_port))
   
-for i in range(num_port):
-  wts = np.random.uniform(size = len(price_data.columns))
-  wts = wts/np.sum(wts)
-  all_wts[i,:] = wts
-  port_ret = np.sum(log_ret.mean() * wts)
-  port_ret = (port_ret + 1) ** 252 - 1
-  port_returns[i] = port_ret
-  port_sd = np.sqrt(np.dot(wts.T, np.dot(cov_mat, wts)))
-  port_risk[i] = port_sd
-  sr = port_ret / port_sd
-  sharpe_ratio[i] = sr
-  min_var = all_wts[port_risk.argmin()]
+  for i in range(num_port):
+    wts = np.random.uniform(size = len(price_data.columns))
+    wts = wts/np.sum(wts)
+    all_wts[i,:] = wts
+    port_ret = np.sum(log_ret.mean() * wts)
+    port_ret = (port_ret + 1) ** 252 - 1
+    port_returns[i] = port_ret
+    port_sd = np.sqrt(np.dot(wts.T, np.dot(cov_mat, wts)))
+    port_risk[i] = port_sd
+    sr = port_ret / port_sd
+    sharpe_ratio[i] = sr
+    names = ['AGF Global Select','Edgepoint Global Portfolio']
+    min_var = all_wts[port_risk.argmin()]
 
 st.table(min_var)
   
